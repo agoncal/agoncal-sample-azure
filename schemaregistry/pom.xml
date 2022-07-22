@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.agoncal.sample.azure</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <groupId>org.agoncal.sample.azure</groupId>
+  <artifactId>schemaregistry</artifactId>
+  <version>1.0</version>
+  <name>Azure Sample :: Schema Registry</name>
+
+  <properties>
+    <azure.bom.version>1.2.3</azure.bom.version>
+  </properties>
+
+  <dependencies>
+    <!-- Azure-->
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-data-schemaregistry</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-data-schemaregistry-apacheavro</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity</artifactId>
+    </dependency>
+
+    <!-- Other-->
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>1.11.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>org.agoncal.samples.azure.schemaregistry.SchemaRegistrySample</mainClass>
+          <!--            <mainClass>org.agoncal.samples.azure.schemaregistry.SchemaRegistryApacheAvro</mainClass>-->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
